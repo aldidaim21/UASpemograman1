@@ -1,0 +1,93 @@
+body {
+  font-family: "Noto Sans", sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+/* container section */
+.container {
+  justify-content: center;
+  height: 100vh;
+}
+
+.content-all {
+  text-align: center;
+  padding: 40px;
+  border-radius: 8px;
+}
+
+.containerhead {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* end container */
+
+h1 {
+  color: #333333; /* Warna judul */
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+thead {
+  background-color: #3498db; /* Warna latar header tabel */
+  color: #ffffff; /* Warna teks header tabel */
+}
+
+tbody {
+  background-color: #ecf0f1; /* Warna latar isi tabel */
+}
+
+td,
+th {
+  padding: 15px; /* Menyesuaikan padding untuk sel-sel tabel */
+  border: 1px solid #bdc3c7; /* Warna garis tepi tabel */
+}
+
+.isi:hover {
+  background-color: #bfbfbf;
+  color: #4f4f4f;
+}
+
+/* buttom section */
+a {
+  cursor: pointer;
+  padding: 10px 15px; /* Menyesuaikan padding untuk tombol */
+  margin: 4px;
+
+  border-radius: 20px;
+}
+
+.update {
+  background-color: #27ae60; /* Warna latar tombol update */
+  color: #ffffff; /* Warna teks tombol update */
+  text-decoration: none;
+}
+
+.update:hover {
+  background-color: #92f8bd;
+  color: #333333;
+}
+
+.delete {
+  background-color: #e74c3c; /* Warna latar tombol delete */
+  color: #ffffff; /* Warna teks tombol delete */
+  text-decoration: none;
+}
+
+.delete:hover {
+  background-color: #f8c3bd;
+  color: #333333;
+}
+.tambah {
+  padding: 10px 20px;
+  background-color: #3498db; /* Warna latar tombol tambah data */
+  color: #ffffff; /* Warna teks tombol tambah data */
+  text-decoration: none;
+}
+/* end button section */
