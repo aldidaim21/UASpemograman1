@@ -23,6 +23,17 @@ if (isset($_POST['submit'])) {
         ";
     }
 }
+
+// fungsi cari
+if (isset($_POST["cari1"])) {
+    $conn1 = cari1($_POST["keyword1"]);
+}
+
+if (isset($_POST["cari2"])) {
+    $conn1 = cari1($_POST["keyword2"]);
+}
+
+
 ?>
 
 <!DOCTYPE html>
@@ -45,31 +56,60 @@ if (isset($_POST['submit'])) {
                 <h1>Daftar Cuti Karyawan</h1>
                 <a class="tambah" data-bs-toggle="modal" data-bs-target="#exampleModal">TAMBAH DATA</a>
             </div>
-            <table>
-                <thead>
-                    <tr>
-                        <th>ID</th>
-                        <th>Karyawan ID</th>
-                        <th>Tanggal Cuti</th>
-                        <th>Jumlah</th>
-                        <th>Action</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <?php foreach ($conn1 as $row) : ?>
-                        <tr class="isi">
-                            <td><?= $row['id']; ?></td>
-                            <td><?= $row['karyawan_id']; ?></td>
-                            <td><?= $row['tanggal_cuti']; ?></td>
-                            <td><?= $row['jumlah']; ?></td>
-                            <td>
-                                <a href="" class="update">update</a>
-                                <a href="hapus.php?id=<?= $row["id"]; ?>" class="delete" role="button" aria-pressed="true" onclick="return confirm('yakin');">Delete</a>
-                            </td>
+
+
+            <table class="table">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Karyawan ID</th>
+                            <th>Tanggal Cuti</th>
+                            <th>Jumlah</th>
+                            <th>Action</th>
                         </tr>
-                    <?php endforeach; ?>
-                </tbody>
-            </table>
+                    </thead>
+                    <tbody>
+                        <?php foreach ($conn1 as $row) : ?>
+                            <tr class="isi">
+                                <td><?= $row['id']; ?></td>
+                                <td><?= $row['karyawan_id']; ?></td>
+                                <td><?= $row['tanggal_cuti']; ?></td>
+                                <td><?= $row['jumlah']; ?></td>
+                                <td>
+                                    <a href="update.php?id=<?= $row["id"]; ?>" class="update">Update</a>
+                                    <a href="hapus.php?id=<?= $row["id"]; ?>" class="delete" role="button" aria-pressed="true" onclick="return confirm('yakin');">Delete</a>
+                                </td>
+                            </tr>
+                        <?php endforeach; ?>
+                    </tbody>
+                </table>
+                <br>
+
+                <div class="row cari">
+                    <h6>Mencari Data</h6>
+                    <div class="col-6">
+                        <form class="form-floating" method="post">
+                            <input type="number" class="form-control is-invalid" id="floatingInputInvalid" placeholder="name@example.com" name="keyword1">
+                            <label for="floatingInputInvalid">Cari data berdasarkan ID</label>
+                            <div class="d-grid gap-2">
+                                <button class="btn btn-primary" type="submit" name="cari1">Cari</button>
+                            </div>
+                        </form>
+
+                    </div>
+
+                    <div class="col-6">
+                        <form class="form-floating" method="post">
+                            <input type="date" class="form-control is-invalid" id="floatingInputInvalid" placeholder="name@example.com" name="keyword2">
+                            <label for=" floatingInputInvalid">Cari berdasarkan tanggal</label>
+                            <div class="d-grid gap-2">
+                                <button class="btn btn-primary" type="submit" name="cari2">cari</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+
         </div>
     </div>
 

@@ -23,6 +23,27 @@ function query($query)
 }
 
 
+function cari1($keyword1)
+{
+    $query = "SELECT * FROM cuti
+			WHERE 
+			id like '%$keyword1%'
+			";
+    return query($query);
+}
+
+
+function cari2($keyword2)
+{
+    $query = "SELECT * FROM cuti
+			WHERE 
+			tanggal_cuti LIKE '%$keyword2%'
+			";
+    return query($query);
+}
+
+
+
 // menabmbahkan data cuti
 function tambahcuti($data)
 {
@@ -45,7 +66,7 @@ function tambahcuti($data)
 }
 
 // edit data 
-function update_cust($data)
+function update_cuti($data)
 {
     global $conn;
 

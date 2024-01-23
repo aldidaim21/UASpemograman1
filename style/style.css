@@ -91,3 +91,31 @@ a {
   text-decoration: none;
 }
 /* end button section */
+
+/* form update */
+/* Styles for the form */
+.conform {
+  background-color: #f8f9fa;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.conform label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: bold;
+}
+
+.conform .form-control {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ced4da;
+  border-radius: 4px;
+  box-sizing: border-box;
+  margin-bottom: 15px;
+}
+
+.row .cari {
+  margin-top: 30px;
+}
